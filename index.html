@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Neha Mirza | Data Analytics & AI/ML Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#ffffff;--bg2:#f0fdfa;--bg3:#f8fafc;--border:#e2e8f0;
+      --teal:#0d9488;--teal2:#0f766e;--teal-lt:rgba(13,148,136,0.08);
+      --yellow:#f59e0b;--yellow-lt:rgba(245,158,11,0.08);
+      --text:#0f172a;--muted:#64748b;--light:#94a3b8;
+      --outfit:'Outfit',sans-serif;--manrope:'Manrope',sans-serif;--fira:'Fira Code',monospace;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--text);font-family:var(--manrope);font-size:16px;line-height:1.7;}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:2px solid var(--teal);display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px;}
+    .nav-brand{font-family:var(--outfit);font-size:18px;font-weight:800;color:var(--teal);}
+    .nav-brand span{color:var(--yellow);}
+    .nav-links{display:flex;gap:32px;list-style:none;}
+    .nav-links a{font-family:var(--fira);font-size:11px;color:var(--muted);text-decoration:none;letter-spacing:0.06em;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--teal);}
+
+    /* HERO */
+    .hero{min-height:100vh;display:grid;grid-template-columns:1.2fr 0.8fr;align-items:center;padding:100px 48px 60px;max-width:1100px;margin:0 auto;gap:60px;}
+    @media(max-width:768px){.hero{grid-template-columns:1fr;padding:100px 24px 60px;}.hero-right{display:none;}}
+
+    .hero-tag{font-family:var(--fira);font-size:11px;color:var(--teal);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+    .hero-tag-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:pulse 2s infinite;}
+    @keyframes pulse{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.4);opacity:0.6;}}
+    .hero h1{font-family:var(--outfit);font-size:clamp(40px,5vw,66px);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:10px;color:var(--text);}
+    .hero h1 span{color:var(--teal);}
+    .hero-role{font-family:var(--outfit);font-size:18px;font-weight:400;color:var(--muted);margin-bottom:24px;}
+    .hero-role strong{color:var(--yellow);font-weight:600;}
+
+    /* Growth path */
+    .growth-path{display:flex;align-items:center;gap:0;margin-bottom:28px;flex-wrap:wrap;}
+    .gp-step{font-family:var(--fira);font-size:11px;padding:6px 14px;background:var(--bg3);border:1px solid var(--border);color:var(--muted);}
+    .gp-step:first-child{border-radius:6px 0 0 6px;}
+    .gp-step.active{background:var(--teal);border-color:var(--teal);color:#fff;border-radius:0 6px 6px 0;}
+    .gp-arrow{font-size:14px;color:var(--teal);padding:0 2px;background:var(--bg3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+
+    .hero-bio{font-size:16px;font-weight:300;color:var(--muted);max-width:520px;line-height:1.85;margin-bottom:32px;}
+
+    /* Stats */
+    .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:32px;}
+    .stat{background:var(--bg3);border:1px solid var(--border);border-bottom:3px solid var(--teal);padding:14px;border-radius:6px;text-align:center;}
+    .stat-num{font-family:var(--outfit);font-size:24px;font-weight:800;color:var(--teal);line-height:1;margin-bottom:4px;}
+    .stat-label{font-family:var(--fira);font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;}
+
+    .hero-cta{display:flex;gap:12px;flex-wrap:wrap;}
+    .btn-primary{font-family:var(--outfit);font-size:14px;font-weight:700;padding:12px 28px;background:var(--teal);color:#fff;border:none;border-radius:8px;text-decoration:none;transition:background 0.2s;}
+    .btn-primary:hover{background:var(--teal2);}
+    .btn-secondary{font-family:var(--outfit);font-size:14px;font-weight:600;padding:12px 28px;background:transparent;color:var(--teal);border:2px solid var(--teal);border-radius:8px;text-decoration:none;transition:all 0.2s;}
+    .btn-secondary:hover{background:var(--teal-lt);}
+
+    /* Data viz element */
+    .hero-right{display:flex;align-items:center;justify-content:center;}
+    .data-card{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:24px;width:100%;max-width:300px;}
+    .data-card-title{font-family:var(--fira);font-size:10px;color:var(--teal);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;}
+    .bar-chart{display:flex;flex-direction:column;gap:10px;}
+    .bar-row{display:flex;align-items:center;gap:10px;}
+    .bar-label{font-family:var(--fira);font-size:9px;color:var(--muted);min-width:60px;text-align:right;}
+    .bar-track{flex:1;height:20px;background:var(--border);border-radius:3px;overflow:hidden;}
+    .bar-fill{height:100%;border-radius:3px;background:var(--teal);position:relative;display:flex;align-items:center;justify-content:flex-end;padding-right:6px;animation:grow 1.5s ease-out;}
+    @keyframes grow{from{width:0;}to{width:100%;}}
+    .bar-fill.w90{width:90%;}
+    .bar-fill.w75{width:75%;}
+    .bar-fill.w85{width:85%;}
+    .bar-fill.w60{width:60%;}
+    .bar-fill.w70{width:70%;}
+    .bar-fill.yellow{background:var(--yellow);}
+    .bar-val{font-family:var(--fira);font-size:9px;color:#fff;font-weight:500;}
+    .data-card-footer{margin-top:16px;padding-top:12px;border-top:1px solid var(--border);font-family:var(--fira);font-size:9px;color:var(--light);text-align:center;}
+
+    /* SECTION */
+    .section-wrap{max-width:1100px;margin:0 auto;padding:80px 48px;border-top:1px solid var(--border);}
+    @media(max-width:768px){.section-wrap{padding:60px 24px;}}
+    .section-eyebrow{font-family:var(--fira);font-size:11px;color:var(--teal);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:10px;}
+    .section-title{font-family:var(--outfit);font-size:36px;font-weight:800;letter-spacing:-0.02em;margin-bottom:36px;color:var(--text);}
+
+    /* VALUE PROP */
+    .vp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+    @media(max-width:680px){.vp-grid{grid-template-columns:1fr;}}
+    .vp-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:24px;}
+    .vp-card.main{grid-column:1/-1;border-left:4px solid var(--teal);}
+    .vp-card.yellow-accent{border-left:4px solid var(--yellow);}
+    .vp-card.teal-accent{border-left:4px solid var(--teal);}
+    .vp-card h3{font-family:var(--fira);font-size:10px;color:var(--teal);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:12px;}
+    .vp-card.yellow-accent h3{color:var(--yellow);}
+    .vp-card p{font-size:14px;color:var(--muted);line-height:1.8;}
+
+    /* SKILLS */
+    .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:32px;}
+    .skill-group{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:16px;}
+    .skill-group h4{font-family:var(--fira);font-size:10px;color:var(--teal);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+    .tags{display:flex;flex-wrap:wrap;gap:5px;}
+    .tag{font-family:var(--fira);font-size:10px;padding:2px 8px;background:#fff;border:1px solid var(--border);border-radius:4px;color:var(--muted);}
+    .tag.t{background:var(--teal-lt);border-color:rgba(13,148,136,0.2);color:var(--teal);}
+    .tag.y{background:var(--yellow-lt);border-color:rgba(245,158,11,0.2);color:#b45309;}
+
+    /* ARTIFACT */
+    .artifact{background:var(--bg3);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+    .artifact-header{background:linear-gradient(135deg,var(--teal),#0f766e);padding:28px 32px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;}
+    .artifact-num{font-family:var(--fira);font-size:10px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:4px;}
+    .artifact-title{font-family:var(--outfit);font-size:22px;font-weight:800;color:#fff;line-height:1.2;}
+    .artifact-badge{font-family:var(--fira);font-size:10px;padding:4px 12px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:100px;color:#fff;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;}
+    .artifact-body{padding:32px;}
+    .artifact-intro{font-size:15px;color:var(--muted);font-style:italic;margin-bottom:28px;line-height:1.7;background:#fff;border:1px solid var(--border);border-radius:8px;padding:16px 20px;}
+    .artifact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px;}
+    @media(max-width:600px){.artifact-grid{grid-template-columns:1fr;}}
+    .meta-label{font-family:var(--fira);font-size:10px;color:var(--light);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:6px;}
+    .meta-text{font-size:14px;color:var(--muted);line-height:1.75;}
+    .artifact-rule{border:none;border-top:1px solid var(--border);margin:24px 0;}
+    .tool-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
+    .tool-tag{font-family:var(--fira);font-size:10px;padding:3px 10px;background:var(--teal-lt);border:1px solid rgba(13,148,136,0.2);border-radius:4px;color:var(--teal);}
+    .vp-block{background:rgba(13,148,136,0.05);border:1px solid rgba(13,148,136,0.2);border-left:4px solid var(--teal);padding:20px 24px;border-radius:8px;margin-bottom:16px;}
+    .vp-block .meta-label{color:var(--teal);}
+    .vp-block .meta-text{color:#0f766e;}
+    .relevance-block{background:var(--yellow-lt);border:1px solid rgba(245,158,11,0.2);border-left:4px solid var(--yellow);padding:20px 24px;border-radius:8px;}
+    .relevance-block .meta-label{color:#b45309;}
+    .relevance-block .meta-text{color:#92400e;}
+
+    /* Process steps */
+    .process-steps{display:flex;flex-direction:column;gap:10px;margin-top:8px;}
+    .process-step{display:flex;gap:12px;align-items:flex-start;}
+    .step-num{font-family:var(--fira);font-size:10px;color:#fff;background:var(--teal);width:22px;height:22px;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;font-weight:500;}
+    .step-text{font-size:13px;color:var(--muted);line-height:1.6;}
+
+    /* Bot link */
+    .bot-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--outfit);font-size:13px;font-weight:700;color:var(--teal);text-decoration:none;background:var(--teal-lt);padding:10px 18px;border-radius:8px;border:1px solid rgba(13,148,136,0.2);margin-top:6px;transition:background 0.2s;}
+    .bot-link:hover{background:rgba(13,148,136,0.15);}
+
+    /* CONTACT */
+    .contact-card{background:linear-gradient(135deg,var(--teal),#0f766e);border-radius:12px;padding:48px;color:#fff;}
+    .contact-card h3{font-family:var(--outfit);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px;}
+    .contact-card p{font-size:15px;color:rgba(255,255,255,0.8);margin-bottom:28px;max-width:520px;line-height:1.8;}
+    .contact-links{display:flex;gap:12px;flex-wrap:wrap;}
+    .contact-link{font-family:var(--outfit);font-size:13px;font-weight:700;padding:10px 20px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:8px;color:#fff;text-decoration:none;transition:background 0.2s;}
+    .contact-link:hover{background:rgba(255,255,255,0.25);}
+
+    /* EDU */
+    .edu-card{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:20px;display:inline-block;}
+    .edu-degree{font-family:var(--outfit);font-size:16px;font-weight:700;margin-bottom:4px;}
+    .edu-school{font-size:13px;color:var(--teal);font-weight:600;}
+    .edu-year{font-family:var(--fira);font-size:10px;color:var(--light);margin-top:4px;}
+
+    /* FOOTER */
+    footer{border-top:2px solid var(--teal);padding:24px 48px;max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+    .footer-text{font-family:var(--fira);font-size:11px;color:var(--light);}
+    .footer-links{display:flex;gap:20px;}
+    .footer-links a{font-family:var(--fira);font-size:11px;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+    .footer-links a:hover{color:var(--teal);}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-brand">Neha<span>.</span>Mirza</span>
+  <ul class="nav-links">
+    <li><a href="#about">about</a></li>
+    <li><a href="#value">value</a></li>
+    <li><a href="#artifacts">artifacts</a></li>
+    <li><a href="#experience">background</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="about">
+  <div class="hero-left">
+    <div class="hero-tag"><span class="hero-tag-dot"></span>AIML-501 Professional Portfolio — Indiana Wesleyan University</div>
+    <h1>Neha<br><span>Mirza</span></h1>
+    <p class="hero-role">Data Analyst → <strong>AI/ML Professional</strong></p>
+
+    <div class="growth-path">
+      <span class="gp-step">Data Analysis</span>
+      <span class="gp-arrow">→</span>
+      <span class="gp-step">Business Intelligence</span>
+      <span class="gp-arrow">→</span>
+      <span class="gp-step active">AI/ML</span>
+    </div>
+
+    <p class="hero-bio">A data analyst with a natural curiosity for finding patterns and telling stories through data. Now expanding into AI and machine learning — bringing an analytical mindset and business focus to intelligent systems that make data work smarter.</p>
+
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">AI/ML</div><div class="stat-label">MS Student</div></div>
+      <div class="stat"><div class="stat-num">6+</div><div class="stat-label">AI Tools Used</div></div>
+      <div class="stat"><div class="stat-num">IWU</div><div class="stat-label">AIML-501</div></div>
+    </div>
+
+    <div class="hero-cta">
+      <a href="#artifacts" class="btn-primary">View Artifacts</a>
+      <a href="#contact" class="btn-secondary">Get In Touch</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="data-card">
+      <div class="data-card-title">// skills confidence index</div>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Data Analysis</span>
+          <div class="bar-track"><div class="bar-fill w90"><span class="bar-val">90%</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Visualization</span>
+          <div class="bar-track"><div class="bar-fill w85"><span class="bar-val">85%</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Stakeholder Comm.</span>
+          <div class="bar-track"><div class="bar-fill w75"><span class="bar-val">75%</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Prompt Eng.</span>
+          <div class="bar-track"><div class="bar-fill w70 yellow"><span class="bar-val">70%</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">ML Fundamentals</span>
+          <div class="bar-track"><div class="bar-fill w60 yellow"><span class="bar-val">60%</span></div></div>
+        </div>
+      </div>
+      <div class="data-card-footer">teal = established · yellow = developing</div>
+    </div>
+  </div>
+</div>
+
+<!-- VALUE PROPOSITION -->
+<section class="section-wrap" id="value">
+  <p class="section-eyebrow">01 — Who I Am</p>
+  <h2 class="section-title">Personal Value Proposition</h2>
+  <div class="vp-grid">
+    <div class="vp-card main">
+      <h3>My Statement</h3>
+      <p>As a data analyst transitioning into AI and machine learning, I bring a grounded, business-focused perspective to intelligent systems. I understand data not just as a technical artifact but as a story about people, processes, and decisions. I help organizations bridge the gap between raw data and real insight — and now I am learning to do that at the scale and speed that only AI can enable.</p>
+    </div>
+    <div class="vp-card teal-accent">
+      <h3>Target Audience</h3>
+      <p>Business leaders, analytics managers, and organizations in retail, finance, and healthcare who need AI/ML professionals who understand the business questions first and the technology second — someone who builds AI tools that people actually want to use.</p>
+    </div>
+    <div class="vp-card yellow-accent">
+      <h3>Unique Differentiator</h3>
+      <p>I come from data before I came to AI. That means I understand what good analysis looks like before automation, which makes me better at evaluating whether AI output is actually correct and useful — a skill many pure ML practitioners lack.</p>
+    </div>
+  </div>
+
+  <p class="section-eyebrow" style="margin-top:48px;">Skills & Technologies</p>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <h4>Data Analytics</h4>
+      <div class="tags">
+        <span class="tag t">Data Analysis</span>
+        <span class="tag t">Business Intelligence</span>
+        <span class="tag t">Data Visualization</span>
+        <span class="tag t">SQL</span>
+        <span class="tag t">Excel</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>BI & Visualization Tools</h4>
+      <div class="tags">
+        <span class="tag t">Tableau</span>
+        <span class="tag t">Power BI</span>
+        <span class="tag t">Google Looker</span>
+        <span class="tag t">Google Sheets</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>AI Tools Used</h4>
+      <div class="tags">
+        <span class="tag y">Google Gemini</span>
+        <span class="tag y">Data Analyst GPT</span>
+        <span class="tag y">STORM AI</span>
+        <span class="tag y">Chatbase.co</span>
+        <span class="tag y">Canva AI</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>AI/ML In Development</h4>
+      <div class="tags">
+        <span class="tag y">ML Fundamentals</span>
+        <span class="tag y">Prompt Engineering</span>
+        <span class="tag y">Chatbot Design</span>
+        <span class="tag y">Design Thinking</span>
+        <span class="tag y">AI Ethics</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>Professional Skills</h4>
+      <div class="tags">
+        <span class="tag">Stakeholder Communication</span>
+        <span class="tag">Data Storytelling</span>
+        <span class="tag">Problem Solving</span>
+        <span class="tag">Continuous Learning</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTIFACTS -->
+<section class="section-wrap" id="artifacts">
+  <p class="section-eyebrow">02 — Course Work</p>
+  <h2 class="section-title">Portfolio Artifacts</h2>
+  <p style="color:var(--muted);font-size:13px;margin-bottom:36px;font-family:var(--fira);">AIML-501 — Model Development | Indiana Wesleyan University | Workshop 1</p>
+
+  <div class="artifact">
+    <div class="artifact-header">
+      <div>
+        <p class="artifact-num">Artifact 01 — Workshop 1 — Assignment 1.4</p>
+        <p class="artifact-title">From Questions to Insights — Building a Data Insights Assistant</p>
+      </div>
+      <span class="artifact-badge">AI Lab</span>
+    </div>
+    <div class="artifact-body">
+      <p class="artifact-intro">A hands-on AI lab documenting the end-to-end experience of exploring LLMs, Custom GPTs, and research AI tools — culminating in the design and build of a working AI chatbot, the Data Insights Assistant, built on Chatbase.co. For a data analytics audience, this artifact answers: can this person use AI tools to solve a real problem that data professionals face every day?</p>
+
+      <div class="artifact-grid">
+        <div>
+          <p class="meta-label">Objective</p>
+          <p class="meta-text">To gain direct hands-on experience with multiple AI tools and apply a Design Thinking framework to build a practical, purpose-built AI assistant that helps data analysts and business users identify the right questions to ask their data before jumping into analysis.</p>
+        </div>
+        <div>
+          <p class="meta-label">Description</p>
+          <p class="meta-text">The Data Insights Assistant is a chatbot that helps users slow down before they start analyzing. Rather than generating charts or running queries, it guides users through defining their business problem, identifying the right analytical approach, and asking better questions of their data — the step most analysts skip.</p>
+        </div>
+      </div>
+
+      <div style="margin-bottom:24px;">
+        <p class="meta-label">Process</p>
+        <div class="process-steps">
+          <div class="process-step"><span class="step-num">1</span><p class="step-text"><strong style="color:var(--text);">LLM Practice (Google Gemini):</strong> Ran a prompt about AI transforming data analytics across 3 separate Gemini conversations. Chat 1 focused on automation, Chat 2 on strategic role shift, Chat 3 on specific tools like Tableau AI and Power BI Copilot. Key lesson: run multiple chats and combine the best elements from each rather than relying on one response.</p></div>
+          <div class="process-step"><span class="step-num">2</span><p class="step-text"><strong style="color:var(--text);">Custom GPT (Data Analyst GPT):</strong> Used Data Analyst GPT to explore a sales dataset analysis approach. It asked clarifying business context questions before making suggestions — producing much more targeted output than a generic LLM. The final data analysis plan it produced was something I could use in a real project immediately.</p></div>
+          <div class="process-step"><span class="step-num">3</span><p class="step-text"><strong style="color:var(--text);">STORM AI:</strong> Researched AI in Business Intelligence and Data Analytics. STORM approached the topic from business leader, data professional, technology vendor, and end user perspectives simultaneously — producing a balanced article that included natural language querying and the evolving analyst role.</p></div>
+          <div class="process-step"><span class="step-num">4</span><p class="step-text"><strong style="color:var(--text);">Design Thinking:</strong> Empathy — analyst who has data but does not know what questions to ask. Define — people jump into tools before defining the business problem. Ideate — questions-first advisor beats SQL generator. Prototype — Data Insights Assistant on Chatbase.co. Test — three different analysis scenarios.</p></div>
+          <div class="process-step"><span class="step-num">5</span><p class="step-text"><strong style="color:var(--text);">Build & Iterate:</strong> Iteration 1 jumped to analysis techniques without understanding business context. Iteration 2 added business problem question first — quality improved immediately. Iteration 3 added "go deeper" follow-up step — conversations felt like genuine consulting sessions.</p></div>
+        </div>
+      </div>
+
+      <hr class="artifact-rule">
+
+      <div style="margin-bottom:20px;">
+        <p class="meta-label">Tools & Technologies</p>
+        <div class="tool-tags">
+          <span class="tool-tag">Google Gemini</span>
+          <span class="tool-tag">Data Analyst GPT</span>
+          <span class="tool-tag">STORM AI</span>
+          <span class="tool-tag">Chatbase.co</span>
+          <span class="tool-tag">Design Thinking</span>
+          <span class="tool-tag">Prompt Engineering</span>
+        </div>
+      </div>
+
+      <div style="margin-bottom:16px;">
+        <p class="meta-label">Try the Bot</p>
+        <a href="#" class="bot-link">🤖 Open Data Insights Assistant →</a>
+        <p style="font-size:11px;color:var(--light);margin-top:6px;font-family:var(--fira);">// paste your Chatbase share link in the href above</p>
+      </div>
+
+      <div class="vp-block">
+        <p class="meta-label">Value Proposition</p>
+        <p class="meta-text">For data analytics teams and business leaders, this artifact demonstrates something more valuable than technical credentials — the ability to identify a real user frustration, design a human-centered solution, and iterate toward something genuinely useful. The Data Insights Assistant solves a problem every data analyst knows: people jump to answers before they understand the question. Building a tool that fixes that problem shows I understand what good analysis actually requires.</p>
+      </div>
+
+      <div style="margin:16px 0;">
+        <p class="meta-label">Unique Value</p>
+        <p class="meta-text">My data analytics background shaped this bot in a way a student without that experience would not have approached it. I knew from firsthand experience that the biggest bottleneck in analytics is not the tools or the data — it is the quality of the questions being asked. That insight drove every design decision in the Data Insights Assistant, from the opening message to the five-step conversation flow.</p>
+      </div>
+
+      <div class="relevance-block">
+        <p class="meta-label">Relevance</p>
+        <p class="meta-text">As AI tools flood into analytics workflows, the professionals who will create the most value are not those who automate the fastest but those who ask the best questions before automating anything. This artifact demonstrates exactly that mindset — and the process of building it gave me practical experience with the AI tools that are already transforming the data analytics profession I work in every day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BACKGROUND -->
+<section class="section-wrap" id="experience">
+  <p class="section-eyebrow">03 — Background</p>
+  <h2 class="section-title">Education & Experience</h2>
+
+  <div style="padding:24px 0;border-bottom:1px solid var(--border);">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:10px;">
+      <div>
+        <p style="font-family:var(--outfit);font-size:18px;font-weight:700;">Data Analyst — <span style="color:var(--teal);">US-Based Organization</span></p>
+        <p style="font-size:12px;color:var(--light);margin-top:2px;">United States</p>
+      </div>
+      <span style="font-family:var(--fira);font-size:11px;color:var(--teal);background:var(--teal-lt);padding:3px 10px;border-radius:100px;">Current Role</span>
+    </div>
+    <ul style="list-style:none;margin-top:10px;">
+      <li style="font-size:14px;color:var(--muted);padding:3px 0 3px 18px;position:relative;line-height:1.6;">
+        <span style="position:absolute;left:0;color:var(--teal);font-size:12px;">→</span>
+        Analyze business data to identify trends, patterns, and actionable insights for stakeholders.
+      </li>
+      <li style="font-size:14px;color:var(--muted);padding:3px 0 3px 18px;position:relative;line-height:1.6;">
+        <span style="position:absolute;left:0;color:var(--teal);font-size:12px;">→</span>
+        Build dashboards and reports that translate complex data into clear business narratives.
+      </li>
+      <li style="font-size:14px;color:var(--muted);padding:3px 0 3px 18px;position:relative;line-height:1.6;">
+        <span style="position:absolute;left:0;color:var(--teal);font-size:12px;">→</span>
+        Collaborate with cross-functional teams to define data requirements and analytical approaches.
+      </li>
+      <li style="font-size:14px;color:var(--muted);padding:3px 0 3px 18px;position:relative;line-height:1.6;">
+        <span style="position:absolute;left:0;color:var(--teal);font-size:12px;">→</span>
+        Exploring AI-powered analytics tools to enhance reporting speed and analytical depth.
+      </li>
+    </ul>
+  </div>
+
+  <p class="section-eyebrow" style="margin-top:40px;margin-bottom:16px;">Education</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;">
+    <div class="edu-card">
+      <p class="edu-degree">MS in AI & Machine Learning</p>
+      <p class="edu-school">Indiana Wesleyan University</p>
+      <p class="edu-year">2025 — Present</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section-wrap" id="contact">
+  <p class="section-eyebrow">04 — Get In Touch</p>
+  <h2 class="section-title">Contact</h2>
+  <div class="contact-card">
+    <h3>Let's Connect! 👋</h3>
+    <p>Currently pursuing my MS in AI/ML at Indiana Wesleyan University while working as a Data Analyst. I am passionate about using AI to make data analysis faster, smarter, and more accessible — and always open to conversations about analytics, AI adoption, and data-driven decision making.</p>
+    <div class="contact-links">
+      <a href="https://github.com/mirzaneha/portfolio" class="contact-link">⚙ GitHub Portfolio</a>
+      <a href="#" class="contact-link">🤖 Data Insights Bot</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-text">© 2025 Neha Mirza — AIML-501 Portfolio | Indiana Wesleyan University</p>
+  <div class="footer-links">
+    <a href="#about">top</a>
+    <a href="#artifacts">artifacts</a>
+    <a href="#contact">contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
