@@ -17,19 +17,14 @@
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
     body{background:var(--bg);color:var(--text);font-family:var(--manrope);font-size:16px;line-height:1.7;}
-
-    /* NAV */
     nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:2px solid var(--teal);display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px;}
     .nav-brand{font-family:var(--outfit);font-size:18px;font-weight:800;color:var(--teal);}
     .nav-brand span{color:var(--yellow);}
     .nav-links{display:flex;gap:32px;list-style:none;}
     .nav-links a{font-family:var(--fira);font-size:11px;color:var(--muted);text-decoration:none;letter-spacing:0.06em;transition:color 0.2s;}
     .nav-links a:hover{color:var(--teal);}
-
-    /* HERO */
     .hero{min-height:100vh;display:grid;grid-template-columns:1.2fr 0.8fr;align-items:center;padding:100px 48px 60px;max-width:1100px;margin:0 auto;gap:60px;}
     @media(max-width:768px){.hero{grid-template-columns:1fr;padding:100px 24px 60px;}.hero-right{display:none;}}
-
     .hero-tag{font-family:var(--fira);font-size:11px;color:var(--teal);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px;}
     .hero-tag-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:pulse 2s infinite;}
     @keyframes pulse{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.4);opacity:0.6;}}
@@ -37,29 +32,21 @@
     .hero h1 span{color:var(--teal);}
     .hero-role{font-family:var(--outfit);font-size:18px;font-weight:400;color:var(--muted);margin-bottom:24px;}
     .hero-role strong{color:var(--yellow);font-weight:600;}
-
-    /* Growth path */
     .growth-path{display:flex;align-items:center;gap:0;margin-bottom:28px;flex-wrap:wrap;}
     .gp-step{font-family:var(--fira);font-size:11px;padding:6px 14px;background:var(--bg3);border:1px solid var(--border);color:var(--muted);}
     .gp-step:first-child{border-radius:6px 0 0 6px;}
     .gp-step.active{background:var(--teal);border-color:var(--teal);color:#fff;border-radius:0 6px 6px 0;}
     .gp-arrow{font-size:14px;color:var(--teal);padding:0 2px;background:var(--bg3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-
     .hero-bio{font-size:16px;font-weight:300;color:var(--muted);max-width:520px;line-height:1.85;margin-bottom:32px;}
-
-    /* Stats */
     .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:32px;}
     .stat{background:var(--bg3);border:1px solid var(--border);border-bottom:3px solid var(--teal);padding:14px;border-radius:6px;text-align:center;}
     .stat-num{font-family:var(--outfit);font-size:24px;font-weight:800;color:var(--teal);line-height:1;margin-bottom:4px;}
     .stat-label{font-family:var(--fira);font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;}
-
     .hero-cta{display:flex;gap:12px;flex-wrap:wrap;}
     .btn-primary{font-family:var(--outfit);font-size:14px;font-weight:700;padding:12px 28px;background:var(--teal);color:#fff;border:none;border-radius:8px;text-decoration:none;transition:background 0.2s;}
     .btn-primary:hover{background:var(--teal2);}
     .btn-secondary{font-family:var(--outfit);font-size:14px;font-weight:600;padding:12px 28px;background:transparent;color:var(--teal);border:2px solid var(--teal);border-radius:8px;text-decoration:none;transition:all 0.2s;}
     .btn-secondary:hover{background:var(--teal-lt);}
-
-    /* Data viz element */
     .hero-right{display:flex;align-items:center;justify-content:center;}
     .data-card{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:24px;width:100%;max-width:300px;}
     .data-card-title{font-family:var(--fira);font-size:10px;color:var(--teal);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;}
@@ -67,24 +54,19 @@
     .bar-row{display:flex;align-items:center;gap:10px;}
     .bar-label{font-family:var(--fira);font-size:9px;color:var(--muted);min-width:60px;text-align:right;}
     .bar-track{flex:1;height:20px;background:var(--border);border-radius:3px;overflow:hidden;}
-    .bar-fill{height:100%;border-radius:3px;background:var(--teal);position:relative;display:flex;align-items:center;justify-content:flex-end;padding-right:6px;animation:grow 1.5s ease-out;}
-    @keyframes grow{from{width:0;}to{width:100%;}}
+    .bar-fill{height:100%;border-radius:3px;background:var(--teal);display:flex;align-items:center;justify-content:flex-end;padding-right:6px;}
     .bar-fill.w90{width:90%;}
-    .bar-fill.w75{width:75%;}
     .bar-fill.w85{width:85%;}
-    .bar-fill.w60{width:60%;}
+    .bar-fill.w75{width:75%;}
     .bar-fill.w70{width:70%;}
+    .bar-fill.w60{width:60%;}
     .bar-fill.yellow{background:var(--yellow);}
     .bar-val{font-family:var(--fira);font-size:9px;color:#fff;font-weight:500;}
     .data-card-footer{margin-top:16px;padding-top:12px;border-top:1px solid var(--border);font-family:var(--fira);font-size:9px;color:var(--light);text-align:center;}
-
-    /* SECTION */
     .section-wrap{max-width:1100px;margin:0 auto;padding:80px 48px;border-top:1px solid var(--border);}
     @media(max-width:768px){.section-wrap{padding:60px 24px;}}
     .section-eyebrow{font-family:var(--fira);font-size:11px;color:var(--teal);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:10px;}
     .section-title{font-family:var(--outfit);font-size:36px;font-weight:800;letter-spacing:-0.02em;margin-bottom:36px;color:var(--text);}
-
-    /* VALUE PROP */
     .vp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
     @media(max-width:680px){.vp-grid{grid-template-columns:1fr;}}
     .vp-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:24px;}
@@ -94,8 +76,6 @@
     .vp-card h3{font-family:var(--fira);font-size:10px;color:var(--teal);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:12px;}
     .vp-card.yellow-accent h3{color:var(--yellow);}
     .vp-card p{font-size:14px;color:var(--muted);line-height:1.8;}
-
-    /* SKILLS */
     .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:32px;}
     .skill-group{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:16px;}
     .skill-group h4{font-family:var(--fira);font-size:10px;color:var(--teal);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
@@ -103,10 +83,9 @@
     .tag{font-family:var(--fira);font-size:10px;padding:2px 8px;background:#fff;border:1px solid var(--border);border-radius:4px;color:var(--muted);}
     .tag.t{background:var(--teal-lt);border-color:rgba(13,148,136,0.2);color:var(--teal);}
     .tag.y{background:var(--yellow-lt);border-color:rgba(245,158,11,0.2);color:#b45309;}
-
-    /* ARTIFACT */
-    .artifact{background:var(--bg3);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+    .artifact{background:var(--bg3);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:32px;}
     .artifact-header{background:linear-gradient(135deg,var(--teal),#0f766e);padding:28px 32px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;}
+    .artifact-header.yellow-header{background:linear-gradient(135deg,#d97706,#b45309);}
     .artifact-num{font-family:var(--fira);font-size:10px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:4px;}
     .artifact-title{font-family:var(--outfit);font-size:22px;font-weight:800;color:#fff;line-height:1.2;}
     .artifact-badge{font-family:var(--fira);font-size:10px;padding:4px 12px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:100px;color:#fff;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;}
@@ -119,38 +98,48 @@
     .artifact-rule{border:none;border-top:1px solid var(--border);margin:24px 0;}
     .tool-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
     .tool-tag{font-family:var(--fira);font-size:10px;padding:3px 10px;background:var(--teal-lt);border:1px solid rgba(13,148,136,0.2);border-radius:4px;color:var(--teal);}
+    .tool-tag.yellow{background:var(--yellow-lt);border-color:rgba(245,158,11,0.2);color:#b45309;}
     .vp-block{background:rgba(13,148,136,0.05);border:1px solid rgba(13,148,136,0.2);border-left:4px solid var(--teal);padding:20px 24px;border-radius:8px;margin-bottom:16px;}
     .vp-block .meta-label{color:var(--teal);}
     .vp-block .meta-text{color:#0f766e;}
     .relevance-block{background:var(--yellow-lt);border:1px solid rgba(245,158,11,0.2);border-left:4px solid var(--yellow);padding:20px 24px;border-radius:8px;}
     .relevance-block .meta-label{color:#b45309;}
     .relevance-block .meta-text{color:#92400e;}
-
-    /* Process steps */
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px;}
+    @media(max-width:600px){.compare-grid{grid-template-columns:1fr;}}
+    .compare-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:16px;}
+    .compare-card h5{font-family:var(--fira);font-size:10px;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+    .compare-card h5.suitable{color:var(--teal);}
+    .compare-card h5.not{color:#dc2626;}
+    .compare-card p{font-size:12px;color:var(--muted);line-height:1.6;}
+    .ref-block{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:16px 20px;margin-top:16px;}
+    .ref-block p{font-family:var(--fira);font-size:11px;color:var(--light);line-height:1.8;}
     .process-steps{display:flex;flex-direction:column;gap:10px;margin-top:8px;}
     .process-step{display:flex;gap:12px;align-items:flex-start;}
     .step-num{font-family:var(--fira);font-size:10px;color:#fff;background:var(--teal);width:22px;height:22px;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;font-weight:500;}
     .step-text{font-size:13px;color:var(--muted);line-height:1.6;}
-
-    /* Bot link */
     .bot-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--outfit);font-size:13px;font-weight:700;color:var(--teal);text-decoration:none;background:var(--teal-lt);padding:10px 18px;border-radius:8px;border:1px solid rgba(13,148,136,0.2);margin-top:6px;transition:background 0.2s;}
     .bot-link:hover{background:rgba(13,148,136,0.15);}
-
-    /* CONTACT */
+    .exp-item{padding:28px 0;border-bottom:1px solid var(--border);}
+    .exp-item:last-child{border-bottom:none;}
+    .exp-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:10px;}
+    .exp-role{font-family:var(--outfit);font-size:18px;font-weight:700;color:var(--text);}
+    .exp-company{color:var(--teal);}
+    .exp-loc{font-size:12px;color:var(--light);margin-top:2px;}
+    .exp-date{font-family:var(--fira);font-size:11px;color:var(--teal);font-weight:500;background:var(--teal-lt);padding:3px 10px;border-radius:100px;}
+    .exp-bullets{list-style:none;margin-top:10px;}
+    .exp-bullets li{font-size:14px;color:var(--muted);padding:3px 0 3px 18px;position:relative;line-height:1.6;}
+    .exp-bullets li::before{content:'→';position:absolute;left:0;color:var(--teal);font-size:12px;top:5px;}
+    .edu-card{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:20px;display:inline-block;}
+    .edu-degree{font-family:var(--outfit);font-size:16px;font-weight:700;margin-bottom:4px;}
+    .edu-school{font-size:13px;color:var(--teal);font-weight:600;}
+    .edu-year{font-family:var(--fira);font-size:10px;color:var(--light);margin-top:4px;}
     .contact-card{background:linear-gradient(135deg,var(--teal),#0f766e);border-radius:12px;padding:48px;color:#fff;}
     .contact-card h3{font-family:var(--outfit);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px;}
     .contact-card p{font-size:15px;color:rgba(255,255,255,0.8);margin-bottom:28px;max-width:520px;line-height:1.8;}
     .contact-links{display:flex;gap:12px;flex-wrap:wrap;}
     .contact-link{font-family:var(--outfit);font-size:13px;font-weight:700;padding:10px 20px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:8px;color:#fff;text-decoration:none;transition:background 0.2s;}
     .contact-link:hover{background:rgba(255,255,255,0.25);}
-
-    /* EDU */
-    .edu-card{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:20px;display:inline-block;}
-    .edu-degree{font-family:var(--outfit);font-size:16px;font-weight:700;margin-bottom:4px;}
-    .edu-school{font-size:13px;color:var(--teal);font-weight:600;}
-    .edu-year{font-family:var(--fira);font-size:10px;color:var(--light);margin-top:4px;}
-
-    /* FOOTER */
     footer{border-top:2px solid var(--teal);padding:24px 48px;max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
     .footer-text{font-family:var(--fira);font-size:11px;color:var(--light);}
     .footer-links{display:flex;gap:20px;}
@@ -160,7 +149,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <span class="nav-brand">Neha<span>.</span>Mirza</span>
   <ul class="nav-links">
@@ -172,66 +160,42 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <div class="hero" id="about">
   <div class="hero-left">
     <div class="hero-tag"><span class="hero-tag-dot"></span>AIML-501 Professional Portfolio — Indiana Wesleyan University</div>
     <h1>Neha<br><span>Mirza</span></h1>
     <p class="hero-role">Data Analyst → <strong>AI/ML Professional</strong></p>
-
     <div class="growth-path">
-      <span class="gp-step">Data Analysis</span>
-      <span class="gp-arrow">→</span>
-      <span class="gp-step">Business Intelligence</span>
-      <span class="gp-arrow">→</span>
+      <span class="gp-step">Data Analysis</span><span class="gp-arrow">→</span>
+      <span class="gp-step">Business Intelligence</span><span class="gp-arrow">→</span>
       <span class="gp-step active">AI/ML</span>
     </div>
-
     <p class="hero-bio">A data analyst with a natural curiosity for finding patterns and telling stories through data. Now expanding into AI and machine learning — bringing an analytical mindset and business focus to intelligent systems that make data work smarter.</p>
-
     <div class="hero-stats">
       <div class="stat"><div class="stat-num">AI/ML</div><div class="stat-label">MS Student</div></div>
       <div class="stat"><div class="stat-num">6+</div><div class="stat-label">AI Tools Used</div></div>
       <div class="stat"><div class="stat-num">IWU</div><div class="stat-label">AIML-501</div></div>
     </div>
-
     <div class="hero-cta">
       <a href="#artifacts" class="btn-primary">View Artifacts</a>
       <a href="#contact" class="btn-secondary">Get In Touch</a>
     </div>
   </div>
-
   <div class="hero-right">
     <div class="data-card">
       <div class="data-card-title">// skills confidence index</div>
       <div class="bar-chart">
-        <div class="bar-row">
-          <span class="bar-label">Data Analysis</span>
-          <div class="bar-track"><div class="bar-fill w90"><span class="bar-val">90%</span></div></div>
-        </div>
-        <div class="bar-row">
-          <span class="bar-label">Visualization</span>
-          <div class="bar-track"><div class="bar-fill w85"><span class="bar-val">85%</span></div></div>
-        </div>
-        <div class="bar-row">
-          <span class="bar-label">Stakeholder Comm.</span>
-          <div class="bar-track"><div class="bar-fill w75"><span class="bar-val">75%</span></div></div>
-        </div>
-        <div class="bar-row">
-          <span class="bar-label">Prompt Eng.</span>
-          <div class="bar-track"><div class="bar-fill w70 yellow"><span class="bar-val">70%</span></div></div>
-        </div>
-        <div class="bar-row">
-          <span class="bar-label">ML Fundamentals</span>
-          <div class="bar-track"><div class="bar-fill w60 yellow"><span class="bar-val">60%</span></div></div>
-        </div>
+        <div class="bar-row"><span class="bar-label">Data Analysis</span><div class="bar-track"><div class="bar-fill w90"><span class="bar-val">90%</span></div></div></div>
+        <div class="bar-row"><span class="bar-label">Visualization</span><div class="bar-track"><div class="bar-fill w85"><span class="bar-val">85%</span></div></div></div>
+        <div class="bar-row"><span class="bar-label">Stakeholder</span><div class="bar-track"><div class="bar-fill w75"><span class="bar-val">75%</span></div></div></div>
+        <div class="bar-row"><span class="bar-label">Prompt Eng.</span><div class="bar-track"><div class="bar-fill w70 yellow"><span class="bar-val">70%</span></div></div></div>
+        <div class="bar-row"><span class="bar-label">ML Basics</span><div class="bar-track"><div class="bar-fill w60 yellow"><span class="bar-val">60%</span></div></div></div>
       </div>
       <div class="data-card-footer">teal = established · yellow = developing</div>
     </div>
   </div>
 </div>
 
-<!-- VALUE PROPOSITION -->
 <section class="section-wrap" id="value">
   <p class="section-eyebrow">01 — Who I Am</p>
   <h2 class="section-title">Personal Value Proposition</h2>
@@ -242,73 +206,29 @@
     </div>
     <div class="vp-card teal-accent">
       <h3>Target Audience</h3>
-      <p>Business leaders, analytics managers, and organizations in retail, finance, and healthcare who need AI/ML professionals who understand the business questions first and the technology second — someone who builds AI tools that people actually want to use.</p>
+      <p>Business leaders, analytics managers, and organizations in retail, finance, and healthcare who need AI/ML professionals who understand the business questions first and the technology second.</p>
     </div>
     <div class="vp-card yellow-accent">
       <h3>Unique Differentiator</h3>
-      <p>I come from data before I came to AI. That means I understand what good analysis looks like before automation, which makes me better at evaluating whether AI output is actually correct and useful — a skill many pure ML practitioners lack.</p>
+      <p>I come from data before I came to AI. That means I understand what good analysis looks like before automation — making me better at evaluating whether AI output is actually correct and useful.</p>
     </div>
   </div>
-
   <p class="section-eyebrow" style="margin-top:48px;">Skills & Technologies</p>
   <div class="skills-grid">
-    <div class="skill-group">
-      <h4>Data Analytics</h4>
-      <div class="tags">
-        <span class="tag t">Data Analysis</span>
-        <span class="tag t">Business Intelligence</span>
-        <span class="tag t">Data Visualization</span>
-        <span class="tag t">SQL</span>
-        <span class="tag t">Excel</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <h4>BI & Visualization Tools</h4>
-      <div class="tags">
-        <span class="tag t">Tableau</span>
-        <span class="tag t">Power BI</span>
-        <span class="tag t">Google Looker</span>
-        <span class="tag t">Google Sheets</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <h4>AI Tools Used</h4>
-      <div class="tags">
-        <span class="tag y">Google Gemini</span>
-        <span class="tag y">Data Analyst GPT</span>
-        <span class="tag y">STORM AI</span>
-        <span class="tag y">Chatbase.co</span>
-        <span class="tag y">Canva AI</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <h4>AI/ML In Development</h4>
-      <div class="tags">
-        <span class="tag y">ML Fundamentals</span>
-        <span class="tag y">Prompt Engineering</span>
-        <span class="tag y">Chatbot Design</span>
-        <span class="tag y">Design Thinking</span>
-        <span class="tag y">AI Ethics</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <h4>Professional Skills</h4>
-      <div class="tags">
-        <span class="tag">Stakeholder Communication</span>
-        <span class="tag">Data Storytelling</span>
-        <span class="tag">Problem Solving</span>
-        <span class="tag">Continuous Learning</span>
-      </div>
-    </div>
+    <div class="skill-group"><h4>Data Analytics</h4><div class="tags"><span class="tag t">Data Analysis</span><span class="tag t">Business Intelligence</span><span class="tag t">Data Visualization</span><span class="tag t">SQL</span><span class="tag t">Excel</span></div></div>
+    <div class="skill-group"><h4>BI & Visualization</h4><div class="tags"><span class="tag t">Tableau</span><span class="tag t">Power BI</span><span class="tag t">Google Looker</span><span class="tag t">Google Sheets</span></div></div>
+    <div class="skill-group"><h4>AI Tools Used</h4><div class="tags"><span class="tag y">Google Gemini</span><span class="tag y">Data Analyst GPT</span><span class="tag y">STORM AI</span><span class="tag y">Chatbase.co</span><span class="tag y">Canva AI</span></div></div>
+    <div class="skill-group"><h4>AI/ML In Development</h4><div class="tags"><span class="tag y">ML Fundamentals</span><span class="tag y">Prompt Engineering</span><span class="tag y">Chatbot Design</span><span class="tag y">Design Thinking</span><span class="tag y">AI Ethics</span></div></div>
+    <div class="skill-group"><h4>Professional Skills</h4><div class="tags"><span class="tag">Stakeholder Communication</span><span class="tag">Data Storytelling</span><span class="tag">Problem Solving</span><span class="tag">Continuous Learning</span></div></div>
   </div>
 </section>
 
-<!-- ARTIFACTS -->
 <section class="section-wrap" id="artifacts">
   <p class="section-eyebrow">02 — Course Work</p>
   <h2 class="section-title">Portfolio Artifacts</h2>
-  <p style="color:var(--muted);font-size:13px;margin-bottom:36px;font-family:var(--fira);">AIML-501 — Model Development | Indiana Wesleyan University | Workshop 1</p>
+  <p style="color:var(--muted);font-size:13px;margin-bottom:36px;font-family:var(--fira);">AIML-501 — Model Development | Indiana Wesleyan University</p>
 
+  <!-- ARTIFACT 1 -->
   <div class="artifact">
     <div class="artifact-header">
       <div>
@@ -318,112 +238,158 @@
       <span class="artifact-badge">AI Lab</span>
     </div>
     <div class="artifact-body">
-      <p class="artifact-intro">A hands-on AI lab documenting the end-to-end experience of exploring LLMs, Custom GPTs, and research AI tools — culminating in the design and build of a working AI chatbot, the Data Insights Assistant, built on Chatbase.co. For a data analytics audience, this artifact answers: can this person use AI tools to solve a real problem that data professionals face every day?</p>
+      <p class="artifact-intro">A hands-on AI lab documenting the end-to-end experience of exploring LLMs, Custom GPTs, and research AI tools — culminating in the design and build of the Data Insights Assistant built on Chatbase.co. This artifact answers: can this person use AI tools to solve a real problem that data professionals face every day?</p>
+      <div class="artifact-grid">
+        <div>
+          <p class="meta-label">Objective</p>
+          <p class="meta-text">To gain direct hands-on experience with multiple AI tools and apply a Design Thinking framework to build a practical AI assistant that helps data analysts identify the right questions to ask their data before jumping into analysis.</p>
+        </div>
+        <div>
+          <p class="meta-label">Description</p>
+          <p class="meta-text">The Data Insights Assistant guides users through defining their business problem, identifying the right analytical approach, and asking better questions of their data — the step most analysts skip before opening their BI tool.</p>
+        </div>
+      </div>
+      <div style="margin-bottom:24px;">
+        <p class="meta-label">Process</p>
+        <div class="process-steps">
+          <div class="process-step"><span class="step-num">1</span><p class="step-text"><strong style="color:var(--text);">LLM (Google Gemini):</strong> Ran same prompt across 3 separate conversations — each surfaced a different valuable dimension. Key lesson: run multiple chats and combine the best elements.</p></div>
+          <div class="process-step"><span class="step-num">2</span><p class="step-text"><strong style="color:var(--text);">Custom GPT (Data Analyst GPT):</strong> Asked clarifying business context questions before making suggestions — producing targeted output I could use in a real project immediately.</p></div>
+          <div class="process-step"><span class="step-num">3</span><p class="step-text"><strong style="color:var(--text);">STORM AI:</strong> Researched AI in Business Intelligence — multi-perspective approach produced a balanced article on natural language querying and the evolving analyst role.</p></div>
+          <div class="process-step"><span class="step-num">4</span><p class="step-text"><strong style="color:var(--text);">Design Thinking → Build → Iterate:</strong> Questions-first approach over SQL generator. Three iterations refined the bot from generic to genuinely consulting-quality conversations.</p></div>
+        </div>
+      </div>
+      <hr class="artifact-rule">
+      <div style="margin-bottom:20px;">
+        <p class="meta-label">Tools & Technologies</p>
+        <div class="tool-tags"><span class="tool-tag">Google Gemini</span><span class="tool-tag">Data Analyst GPT</span><span class="tool-tag">STORM AI</span><span class="tool-tag">Chatbase.co</span><span class="tool-tag">Design Thinking</span><span class="tool-tag">Prompt Engineering</span></div>
+      </div>
+      <div style="margin-bottom:16px;">
+        <p class="meta-label">Try the Bot</p>
+        <a href="#" class="bot-link">🤖 Open Data Insights Assistant →</a>
+        <p style="font-size:11px;color:var(--light);margin-top:6px;font-family:var(--fira);">// paste your Chatbase share link here</p>
+      </div>
+      <div class="vp-block">
+        <p class="meta-label">Value Proposition</p>
+        <p class="meta-text">The Data Insights Assistant solves a problem every data analyst knows: people jump to answers before they understand the question. Building a tool that fixes that problem shows I understand what good analysis actually requires — and that I can translate that understanding into a working AI product.</p>
+      </div>
+      <div class="relevance-block">
+        <p class="meta-label">Relevance</p>
+        <p class="meta-text">The professionals who create the most value with AI are those who ask the best questions before automating anything. This artifact demonstrates exactly that mindset.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARTIFACT 2 -->
+  <div class="artifact">
+    <div class="artifact-header yellow-header">
+      <div>
+        <p class="artifact-num">Artifact 02 — Workshop 2 — Assignment 2.3</p>
+        <p class="artifact-title">ML vs. Deep Learning — A Data Analyst's Comparative Study</p>
+      </div>
+      <span class="artifact-badge">Written Analysis</span>
+    </div>
+    <div class="artifact-body">
+      <p class="artifact-intro">A comparative analysis of machine learning and deep learning through two real-world case studies — Microsoft Outlook's spam filter (Decision Tree/Random Forest) and Google's Diabetic Retinopathy Detection System (CNN). Written from a data analyst's perspective that asks: which approach produces results I can trust, explain, and act on?</p>
 
       <div class="artifact-grid">
         <div>
           <p class="meta-label">Objective</p>
-          <p class="meta-text">To gain direct hands-on experience with multiple AI tools and apply a Design Thinking framework to build a practical, purpose-built AI assistant that helps data analysts and business users identify the right questions to ask their data before jumping into analysis.</p>
+          <p class="meta-text">To demonstrate the ability to differentiate between ML and DL by grounding the comparison in real applications that data professionals encounter — and to articulate why each approach is appropriate from the perspective of a practitioner who needs to explain and defend analytical choices to business stakeholders.</p>
         </div>
         <div>
           <p class="meta-label">Description</p>
-          <p class="meta-text">The Data Insights Assistant is a chatbot that helps users slow down before they start analyzing. Rather than generating charts or running queries, it guides users through defining their business problem, identifying the right analytical approach, and asking better questions of their data — the step most analysts skip.</p>
+          <p class="meta-text">The analysis examines Outlook's use of Decision Tree-based classification for spam filtering — where known features and interpretability requirements make traditional ML the right choice — and Google's CNN-based diabetic retinopathy detection — where raw medical image data and the need for automatic pattern discovery make deep learning the only viable approach.</p>
         </div>
       </div>
 
       <div style="margin-bottom:24px;">
-        <p class="meta-label">Process</p>
-        <div class="process-steps">
-          <div class="process-step"><span class="step-num">1</span><p class="step-text"><strong style="color:var(--text);">LLM Practice (Google Gemini):</strong> Ran a prompt about AI transforming data analytics across 3 separate Gemini conversations. Chat 1 focused on automation, Chat 2 on strategic role shift, Chat 3 on specific tools like Tableau AI and Power BI Copilot. Key lesson: run multiple chats and combine the best elements from each rather than relying on one response.</p></div>
-          <div class="process-step"><span class="step-num">2</span><p class="step-text"><strong style="color:var(--text);">Custom GPT (Data Analyst GPT):</strong> Used Data Analyst GPT to explore a sales dataset analysis approach. It asked clarifying business context questions before making suggestions — producing much more targeted output than a generic LLM. The final data analysis plan it produced was something I could use in a real project immediately.</p></div>
-          <div class="process-step"><span class="step-num">3</span><p class="step-text"><strong style="color:var(--text);">STORM AI:</strong> Researched AI in Business Intelligence and Data Analytics. STORM approached the topic from business leader, data professional, technology vendor, and end user perspectives simultaneously — producing a balanced article that included natural language querying and the evolving analyst role.</p></div>
-          <div class="process-step"><span class="step-num">4</span><p class="step-text"><strong style="color:var(--text);">Design Thinking:</strong> Empathy — analyst who has data but does not know what questions to ask. Define — people jump into tools before defining the business problem. Ideate — questions-first advisor beats SQL generator. Prototype — Data Insights Assistant on Chatbase.co. Test — three different analysis scenarios.</p></div>
-          <div class="process-step"><span class="step-num">5</span><p class="step-text"><strong style="color:var(--text);">Build & Iterate:</strong> Iteration 1 jumped to analysis techniques without understanding business context. Iteration 2 added business problem question first — quality improved immediately. Iteration 3 added "go deeper" follow-up step — conversations felt like genuine consulting sessions.</p></div>
+        <p class="meta-label">Case Study 1 — ML: Outlook Spam Filter (Decision Tree / Random Forest)</p>
+        <div class="compare-grid">
+          <div class="compare-card">
+            <h5 class="suitable">✓ Why ML is Suitable</h5>
+            <p>Binary classification with well-understood, structured features — sender reputation, keyword patterns, link density, attachment types. Decision trees produce interpretable rules Microsoft's security team can audit and explain to enterprise customers. Efficient at scale without DL computational overhead (Starmer, 2021).</p>
+          </div>
+          <div class="compare-card">
+            <h5 class="not">✗ Why Deep Learning is NOT Suitable</h5>
+            <p>Spam detection does not require automatic feature discovery — the features are already known and structured. A deep neural network would consume significantly more resources, produce less interpretable results, and likely not outperform a well-tuned Random Forest on this specific structured classification task.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom:24px;">
+        <p class="meta-label">Case Study 2 — Deep Learning: Google Diabetic Retinopathy Detection (CNN)</p>
+        <div class="compare-grid">
+          <div class="compare-card">
+            <h5 class="suitable">✓ Why DL is Suitable</h5>
+            <p>Medical image analysis requires identifying subtle visual patterns — microaneurysms, hemorrhages, abnormal blood vessel growth — across high-resolution images with enormous variability. CNNs automatically learn hierarchical visual representations from raw pixels without manual feature engineering. Google's system matches specialist ophthalmologist accuracy (Couto, 2025).</p>
+          </div>
+          <div class="compare-card">
+            <h5 class="not">✗ Why Traditional ML is NOT Suitable</h5>
+            <p>Manual extraction of visual features is impractical for medical imaging. A decision tree fed hand-crafted image features would miss the subtle, distributed visual patterns that define early-stage diabetic retinopathy — resulting in dangerous false negatives in a clinical setting where accuracy is literally a matter of vision.</p>
+          </div>
         </div>
       </div>
 
       <hr class="artifact-rule">
 
       <div style="margin-bottom:20px;">
-        <p class="meta-label">Tools & Technologies</p>
+        <p class="meta-label">Concepts Demonstrated</p>
         <div class="tool-tags">
-          <span class="tool-tag">Google Gemini</span>
-          <span class="tool-tag">Data Analyst GPT</span>
-          <span class="tool-tag">STORM AI</span>
-          <span class="tool-tag">Chatbase.co</span>
-          <span class="tool-tag">Design Thinking</span>
-          <span class="tool-tag">Prompt Engineering</span>
+          <span class="tool-tag">Decision Trees</span>
+          <span class="tool-tag">Random Forest</span>
+          <span class="tool-tag yellow">Convolutional Neural Networks</span>
+          <span class="tool-tag yellow">Medical Image Analysis</span>
+          <span class="tool-tag">Feature Engineering</span>
+          <span class="tool-tag">Model Interpretability</span>
         </div>
       </div>
 
-      <div style="margin-bottom:16px;">
-        <p class="meta-label">Try the Bot</p>
-        <a href="#" class="bot-link">🤖 Open Data Insights Assistant →</a>
-        <p style="font-size:11px;color:var(--light);margin-top:6px;font-family:var(--fira);">// paste your Chatbase share link in the href above</p>
-      </div>
-
-      <div class="vp-block">
+      <div class="vp-block" style="margin-bottom:16px;">
         <p class="meta-label">Value Proposition</p>
-        <p class="meta-text">For data analytics teams and business leaders, this artifact demonstrates something more valuable than technical credentials — the ability to identify a real user frustration, design a human-centered solution, and iterate toward something genuinely useful. The Data Insights Assistant solves a problem every data analyst knows: people jump to answers before they understand the question. Building a tool that fixes that problem shows I understand what good analysis actually requires.</p>
+        <p class="meta-text">For analytics managers and business leaders, this artifact demonstrates the kind of structured analytical thinking that makes data professionals valuable in AI/ML decision-making. The comparison is not about which model is more technically impressive — it is about which model is trustworthy, explainable, and appropriate for the stakes involved. A data analyst who can make and defend that distinction is far more valuable than one who always reaches for the most sophisticated option.</p>
       </div>
 
-      <div style="margin:16px 0;">
+      <div style="margin-bottom:16px;">
         <p class="meta-label">Unique Value</p>
-        <p class="meta-text">My data analytics background shaped this bot in a way a student without that experience would not have approached it. I knew from firsthand experience that the biggest bottleneck in analytics is not the tools or the data — it is the quality of the questions being asked. That insight drove every design decision in the Data Insights Assistant, from the opening message to the five-step conversation flow.</p>
+        <p class="meta-text">My data analytics background shaped this analysis around a question I ask every day: can I explain this result to a stakeholder who did not build the model? For Outlook's spam filter, yes — the rules are transparent and auditable. For Google's retinopathy detector, the answer is more nuanced — and recognizing that nuance, and what it means for how the model should be deployed and governed, is exactly what data analysts bring to AI/ML decision-making.</p>
       </div>
 
       <div class="relevance-block">
         <p class="meta-label">Relevance</p>
-        <p class="meta-text">As AI tools flood into analytics workflows, the professionals who will create the most value are not those who automate the fastest but those who ask the best questions before automating anything. This artifact demonstrates exactly that mindset — and the process of building it gave me practical experience with the AI tools that are already transforming the data analytics profession I work in every day.</p>
+        <p class="meta-text">Data analysts are increasingly being asked to evaluate, validate, and communicate AI model outputs — not just build dashboards. Understanding whether a model uses interpretable ML or a black-box deep neural network changes how outputs should be validated, how errors should be investigated, and how results should be presented to decision-makers. This artifact demonstrates that understanding applied to real-world systems I would encounter in my career.</p>
+      </div>
+
+      <div class="ref-block">
+        <p class="meta-label" style="margin-bottom:8px;">References</p>
+        <p>Amazon. (n.d.). <em>What is machine learning?</em> AWS. https://aws.amazon.com/what-is/machine-learning/</p>
+        <p>Couto, J. (2025). <em>An introductory guide to computer vision</em>. Tryolabs. https://tryolabs.com/guides/introductory-guide-computer-vision</p>
+        <p>Starmer, J. (2021, April 25). <em>Decision and classification trees, clearly explained!!!</em> [Video]. YouTube. https://www.youtube.com/watch?v=_L39rN6gz7Y&t=18s</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BACKGROUND -->
 <section class="section-wrap" id="experience">
   <p class="section-eyebrow">03 — Background</p>
   <h2 class="section-title">Education & Experience</h2>
-
-  <div style="padding:24px 0;border-bottom:1px solid var(--border);">
-    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:10px;">
-      <div>
-        <p style="font-family:var(--outfit);font-size:18px;font-weight:700;">Data Analyst — <span style="color:var(--teal);">US-Based Organization</span></p>
-        <p style="font-size:12px;color:var(--light);margin-top:2px;">United States</p>
-      </div>
-      <span style="font-family:var(--fira);font-size:11px;color:var(--teal);background:var(--teal-lt);padding:3px 10px;border-radius:100px;">Current Role</span>
+  <div class="exp-item">
+    <div class="exp-top">
+      <div><p class="exp-role">Data Analyst — <span class="exp-company">US-Based Organization</span></p><p class="exp-loc">United States</p></div>
+      <span class="exp-date">Current Role</span>
     </div>
-    <ul style="list-style:none;margin-top:10px;">
-      <li style="font-size:14px;color:var(--muted);padding:3px 0 3px 18px;position:relative;line-height:1.6;">
-        <span style="position:absolute;left:0;color:var(--teal);font-size:12px;">→</span>
-        Analyze business data to identify trends, patterns, and actionable insights for stakeholders.
-      </li>
-      <li style="font-size:14px;color:var(--muted);padding:3px 0 3px 18px;position:relative;line-height:1.6;">
-        <span style="position:absolute;left:0;color:var(--teal);font-size:12px;">→</span>
-        Build dashboards and reports that translate complex data into clear business narratives.
-      </li>
-      <li style="font-size:14px;color:var(--muted);padding:3px 0 3px 18px;position:relative;line-height:1.6;">
-        <span style="position:absolute;left:0;color:var(--teal);font-size:12px;">→</span>
-        Collaborate with cross-functional teams to define data requirements and analytical approaches.
-      </li>
-      <li style="font-size:14px;color:var(--muted);padding:3px 0 3px 18px;position:relative;line-height:1.6;">
-        <span style="position:absolute;left:0;color:var(--teal);font-size:12px;">→</span>
-        Exploring AI-powered analytics tools to enhance reporting speed and analytical depth.
-      </li>
+    <ul class="exp-bullets">
+      <li>Analyze business data to identify trends, patterns, and actionable insights for stakeholders.</li>
+      <li>Build dashboards and reports that translate complex data into clear business narratives.</li>
+      <li>Collaborate with cross-functional teams to define data requirements and analytical approaches.</li>
+      <li>Exploring AI-powered analytics tools to enhance reporting speed and analytical depth.</li>
     </ul>
   </div>
-
   <p class="section-eyebrow" style="margin-top:40px;margin-bottom:16px;">Education</p>
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;">
-    <div class="edu-card">
-      <p class="edu-degree">MS in AI & Machine Learning</p>
-      <p class="edu-school">Indiana Wesleyan University</p>
-      <p class="edu-year">2025 — Present</p>
-    </div>
+    <div class="edu-card"><p class="edu-degree">MS in AI & Machine Learning</p><p class="edu-school">Indiana Wesleyan University</p><p class="edu-year">2025 — Present</p></div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="section-wrap" id="contact">
   <p class="section-eyebrow">04 — Get In Touch</p>
   <h2 class="section-title">Contact</h2>
@@ -437,14 +403,9 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p class="footer-text">© 2025 Neha Mirza — AIML-501 Portfolio | Indiana Wesleyan University</p>
-  <div class="footer-links">
-    <a href="#about">top</a>
-    <a href="#artifacts">artifacts</a>
-    <a href="#contact">contact</a>
-  </div>
+  <div class="footer-links"><a href="#about">top</a><a href="#artifacts">artifacts</a><a href="#contact">contact</a></div>
 </footer>
 
 </body>
